@@ -8,16 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - uses: actions/cache@v1
+      - uses: whoan/docker-build-with-cache-action@v4
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-
-      - name: Bundle install
-        run: |
-          bundle config path vendor/bundle
+          image_name: ruby:2.4.0
 
       - name: Build & Deploy to GitHub Pages
         env: 
