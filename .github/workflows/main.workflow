@@ -11,7 +11,7 @@ action "Jekyll Action" {
   env = {
     SRC = "./"
   }
-  secrets = ["JEKYLL_PAT"]
+  secrets = ["JEKYLL_DEPLOY"]
 }
 
 action "Filters for GitHub Actions" {
